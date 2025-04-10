@@ -17,8 +17,9 @@ public class UserEditProcessor implements ItemProcessor<User, UserEntity> {
                 .username(user.getUsername() + "EDITED")
                 .password(user.getPassword() + "EDITED")
                 .email(user.getEmail() + "EDITED")
-                .name(user.getName() + "EDITED")
-                .surname(user.getSurname() + "EDITED")
+                //.name(user.getName() + "EDITED")
+                //.surname(user.getSurname() + "EDITED")
+                .fullName((user.getName() + " " + user.getSurname() + "EDITED"))
                 .build();
     }
 }

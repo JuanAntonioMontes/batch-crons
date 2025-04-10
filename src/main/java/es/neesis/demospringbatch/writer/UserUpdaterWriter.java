@@ -31,7 +31,8 @@ public class UserUpdaterWriter implements ItemWriter<UserEntity> {
         JdbcBatchItemWriter<UserEntity> builder = new JdbcBatchItemWriterBuilder<UserEntity>()
                 .beanMapped()
                 .sql("UPDATE users SET username = :username, password = :password, email = :email, " +
-                        "name = :name, surname = :surname WHERE id = :id")
+//                        "name = :name, surname = :surname WHERE id = :id")
+                        "full_name = :fullName WHERE id = :id")
                 .dataSource(dataSource)
                 .build();
         builder.afterPropertiesSet();
