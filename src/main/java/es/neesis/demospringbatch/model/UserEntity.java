@@ -3,6 +3,9 @@ package es.neesis.demospringbatch.model;
 import lombok.Builder;
 import lombok.Data;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 @Builder
 @Data
 public class UserEntity {
@@ -13,4 +16,5 @@ public class UserEntity {
     //private String name;
     //private String surname;
     private String fullName;
+    private Timestamp createdAt;
 }

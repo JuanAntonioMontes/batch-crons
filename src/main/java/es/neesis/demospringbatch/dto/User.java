@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
+
 @Builder
 @Data
 @AllArgsConstructor
@@ -17,6 +19,8 @@ public class User {
     private String name;
     private String surname;
     private String fullName;
+    private Timestamp createdAt;
+
 
     public void setFull_name(String fullName) {
         this.fullName = fullName;

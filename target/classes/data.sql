@@ -9,6 +9,6 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL,
   surname VARCHAR(255) NOT NULL
    */
-  full_name VARCHAR(255) NOT NULL
-
+  full_name VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

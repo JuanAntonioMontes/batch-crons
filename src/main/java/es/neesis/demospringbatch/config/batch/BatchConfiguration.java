@@ -29,6 +29,8 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
 import javax.sql.DataSource;
+import java.sql.Timestamp;
+
 
 @Configuration
 @EnableBatchProcessing
@@ -58,7 +60,8 @@ public class BatchConfiguration {
                 .name("readerBDD")
                 .dataSource(dataSource)
 //                .sql("SELECT id, username, password, email, name, surname FROM users")
-                .sql("SELECT id, username, password, email, full_name FROM users")
+                            // full_name en ej2
+                .sql("SELECT id, username, password, email, full_name, created_at as createdAt FROM users")
                 .rowMapper(new BeanPropertyRowMapper<>(User.class))
                 .build();
     }

@@ -4,6 +4,8 @@ import es.neesis.demospringbatch.dto.User;
 import es.neesis.demospringbatch.model.UserEntity;
 import org.springframework.batch.item.ItemProcessor;
 
+import java.sql.Timestamp;
+
 public class UserEditProcessor implements ItemProcessor<User, UserEntity> {
 
 
@@ -20,6 +22,7 @@ public class UserEditProcessor implements ItemProcessor<User, UserEntity> {
                 //.name(user.getName() + "EDITED")
                 //.surname(user.getSurname() + "EDITED")
                 .fullName((user.getName() + " " + user.getSurname() + "EDITED"))
+                .createdAt(new Timestamp(System.currentTimeMillis()))
                 .build();
     }
 }
